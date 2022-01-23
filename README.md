@@ -6,7 +6,7 @@ Specifically, it does the following:
     - makes each colour a separate material
     - creates new UV values (based on global coordinates) that make it easier to apply textures in a game engine, modeling software, etc.
 
-# More Details
+## More Details
 
 This works best if you use relatively few colours, with each colour
 representing a different texture that you plan to apply later in
@@ -17,11 +17,11 @@ Note that while this script creates multiple materials and new texture vertices
 is not modified at all. Thus, there shouldn't be any serious efficiency
 concerns.
 
-# Dependencies
+## Dependencies
 
 Requires `numpy` and `pillow`.
 
-# Instructions:
+## Instructions:
 
 Modify a file in place:
 `python mvio.py input.obj`
