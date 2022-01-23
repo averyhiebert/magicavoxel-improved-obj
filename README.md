@@ -3,10 +3,9 @@
 A script that improves `.obj` and `.mtl` files exported from MagicaVoxel.
 
 Specifically, it does the following:
-    - makes each colour a separate material
-    - creates new UV values (based on global coordinates) that make it easier to apply textures in a game engine, modeling software, etc.
 
-## More Details
+ - makes each colour a separate material
+ - creates new UV values (based on global coordinates) that make it easier to apply textures in a game engine, modeling software, etc.
 
 This works best if you use relatively few colours, with each colour
 representing a different texture that you plan to apply later in
