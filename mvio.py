@@ -88,6 +88,10 @@ def fix_texture_coordinates(vs,vts,vns,faces):
     # This is a mess, sorry
     new_faces = faces.copy()
 
+    # Normalizing to ensure UV values stay between 0 and 1
+    normalized_vs = vs - vs.min(axis=0) # No negative values, some corner is 0
+    normalized_vs = normalized_vs/np.abs(normalized_vs).max() # No values over 1
+
     new_vts = []
     vts_dict = {}
 
@@ -97,7 +101,7 @@ def fix_texture_coordinates(vs,vts,vns,faces):
     for f, i in np.ndindex(new_faces.shape[:2]):
         vertex_index, _, normal_index = faces[f,i]
         normal = vns[normal_index-1] # Recall: not 0-indexed
-        vertex = vs[vertex_index-1]/np.abs(vs).max() # Normalize, since UV < 1
+        vertex = normalized_vs[vertex_index-1]
 
         # Figure out new texture coord
         # Note: since this is magicavoxel, I assume each normal vector
