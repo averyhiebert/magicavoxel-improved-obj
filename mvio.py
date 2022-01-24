@@ -34,17 +34,17 @@ def load_obj_file(fname):
     # TODO Make this more DRY
 
     # Get texture coords
-    vt_strs = re.findall(r"^vt\s+([-0-9.]+)\s+([-.0-9]+)\s*$",
+    vt_strs = re.findall(r"^vt\s+([-e0-9.]+)\s+([-e.0-9]+)\s*$",
         obj_file,re.MULTILINE)
     vts = np.array(vt_strs,dtype="float")
 
     # Get vertex normals
-    vn_strs = re.findall(r"^vn\s+([-0-9.]+)\s+([-.0-9]+)\s+([-.0-9]+)\s*$",
+    vn_strs = re.findall(r"^vn\s+([-e0-9.]+)\s+([-e.0-9]+)\s+([-e.0-9]+)\s*$",
         obj_file,re.MULTILINE)
     vns = np.array(vn_strs,dtype="float")
 
     # Get 3D vertices
-    v_strs = re.findall(r"^v\s+([-0-9.]+)\s+([-.0-9]+)\s+([-.0-9]+)\s*$",
+    v_strs = re.findall(r"^v\s+([-e0-9.]+)\s+([-e.0-9]+)\s+([-e.0-9]+)\s*$",
         obj_file,re.MULTILINE)
     vs = np.array(v_strs,dtype="float")
 
